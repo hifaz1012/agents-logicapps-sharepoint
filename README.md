@@ -36,7 +36,7 @@ For more info to retrieve data from SharePoint site using M365 Copilot API, refe
    git clone https://github.com/hifaz1012/agents-logicapps-sharepoint.git
    cd agents-logicapps-sharepoint
    ```
-2. **Create and activate a virtual environment**
+2. **Create and activate a virtual environment (venv)**
    ```cmd
    python -m venv test_env
    test_env\Scripts\activate
