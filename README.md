@@ -11,24 +11,50 @@ This project demonstrates how to use Azure AI Agents with Logic Apps to retrieve
 
 ## LogicApps Setup
 
-![alt text](image.png)
+![alt text](img/image.png)
 
-1. When a HTTP request is received
+Step 1: When a HTTP request is received
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
-2. Invoke Http Request
+Request Body:
+```{
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string"
+    }
+  }
+}
+```
 
-![alt text](image-3.png)
+Step 2: Invoke Http Request
+
+![alt text](img/image-3.png)
 
 For connection, use Microsoft Entra Id (Pre-Authorized) which has Copilot License for authentication.
 Enter Base URL and Application URL as ```https://graph.microsoft.com```
 
 For more info to retrieve data from SharePoint site using M365 Copilot API, refer to https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api/ai-services/retrieval/copilotroot-retrieval#example-4-retrieve-data-from-a-specific-sharepoint-site
 
+Body Of Request:
+
+```
+{
+  "queryString":"@{triggerBody()?['query']}" ,
+  "dataSource": "sharePoint",
+"filterExpression": "path:\[Sharepoint folder path]\"",
+  "resourceMetadata": [
+    "title",
+    "author"
+  ],
+  "maximumNumberOfResults": "4"
+}
+```
+
 3. Response
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 ## Code Setup
 1. **Clone the repository**
@@ -78,7 +104,7 @@ streamlit run streamlit_app.py
 
 ## UI Screenshot
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 ## Files
 - `agents-sharepoint-logicapps-standalone.py`: Standalone script for agent execution
