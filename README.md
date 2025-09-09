@@ -52,9 +52,12 @@ Body Of Request:
 }
 ```
 
-3. Response
+Step 3: Response
 
 ![alt text](img/image-4.png)
+
+Body:
+[Select Body Variable]
 
 ## Code Setup
 1. **Clone the repository**
