@@ -1,0 +1,7 @@
+PROJECT_ENDPOINT="[Your AI Foundry Project Endpoint]"
+MODEL_DEPLOYMENT_NAME="gpt-4.1"
+
+SUBSCRIPTION_ID="[Your Azure Subscription ID]"
+RESOURCE_GROUP="[Resource Group Name where Logic App is deployed]"
+LOGIC_APP_NAME="[Your Logic App Name]"
+TRIGGER_NAME="When_a_HTTP_request_is_received"
